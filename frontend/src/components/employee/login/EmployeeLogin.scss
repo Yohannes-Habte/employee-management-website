@@ -1,0 +1,98 @@
+@import '../../../styles/Variables.scss';
+@import '../../../styles/Mixins.scss';
+
+.employee-login-container {
+  width: 50%;
+  margin: 1rem auto;
+  @include shadow2;
+
+  .employee-login-title {
+    @include subTitle;
+  }
+
+  // Error message
+  .error-message {
+    @include errorMessage;
+  }
+
+  .employee-login-fieldset {
+    @include fieldset;
+
+    .employee-login-legend {
+      @include legend;
+    }
+
+    .employee-login-form {
+      @include flexColumn;
+
+      .input-container {
+        @include inputContainer;
+
+        .input-icon {
+          @include inputIcon;
+        }
+
+        .input-field {
+          @include inputField;
+        }
+
+        .input-label {
+          @include inputLabel;
+        }
+
+        .input-highlight {
+          @include inputHighlight;
+        }
+
+        .input-field:focus + .input-label {
+          @include focusInputFieldAndInputLabel;
+        }
+
+        .input-field:focus + .input-label + .input-highlight {
+          width: 100%;
+        }
+
+        .password-display {
+          @include passwordDisplay;
+        }
+      }
+
+      .keep-logged-in-and-forgot-password-wrapper {
+        @include flexRow;
+        align-items: center;
+
+        .checkbox-and-keep-me-signin {
+          @include flexRow;
+          .checkbox-field {
+            @include checkbox;
+          }
+
+          .keep-me-login {
+            @include termOfUse;
+            color: $black;
+          }
+        }
+
+        .forgot-link {
+          @include linkTo;
+        }
+      }
+
+      .employee-account-btn {
+        @include button1;
+
+        .loading {
+          @include loader;
+        }
+      }
+
+      .have-no-account {
+        @include haveAccount;
+
+        .link-to {
+          @include linkTo;
+        }
+      }
+    }
+  }
+}

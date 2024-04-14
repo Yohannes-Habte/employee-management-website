@@ -1,0 +1,14 @@
+@import '../../../styles/Variables.scss';
+@import '../../../styles/Mixins.scss';
+
+.employee-login-page {
+
+    .employee-login-page-container {
+        width: $laptop;
+        margin: auto;
+
+        .employee-login-page-title {
+            @include title;
+        }
+    }
+}

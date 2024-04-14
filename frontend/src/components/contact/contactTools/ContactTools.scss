@@ -1,0 +1,32 @@
+@import '../../../styles/Variables.scss';
+@import '../../../styles/Mixins.scss';
+
+.fast-contact-tools {
+  @include flexColumn;
+  padding: 0 0 0 1rem;
+  gap: 0;
+  width: 25%;
+  background-color: $box-bg;
+
+  .fast-contact-tools-title {
+    @include subTitle;
+  }
+
+  .contact-tool {
+    @include flexRow;
+    align-items: center;
+
+    .contact-tool-icon {
+      font-size: $afs;
+      cursor: pointer;
+      color: $green;
+    }
+
+    .link-container {
+      .link {
+        font-weight: bold;
+        font-size: $nfs;
+      }
+    }
+  }
+}

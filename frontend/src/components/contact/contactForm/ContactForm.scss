@@ -1,0 +1,103 @@
+@import '../../../styles/Variables.scss';
+@import '../../../styles/Mixins.scss';
+
+// Mobile screen size
+.form-container {
+  width: 70%;
+  margin: auto;
+  @include shadow2;
+
+  .contact-form-title {
+    @include subTitle;
+    font-size: $afs;
+    margin-bottom: 1rem;
+  }
+
+  .contact-form {
+    // inputs Wrapper
+    .inputs-wrapper {
+      @include twoGridTemplateEqualColumns;
+
+      .input-container {
+        @include inputContainer;
+
+        .input-icon {
+          @include inputIcon;
+        }
+
+        .input-field {
+          @include inputField;
+        }
+
+        .input-label {
+          @include inputLabel;
+        }
+
+        .input-highlight {
+          @include inputHighlight;
+        }
+
+        .input-field:focus + .input-label {
+          @include focusInputFieldAndInputLabel;
+        }
+
+        .input-field:focus + .input-label + .input-highlight {
+          width: 100%;
+        }
+      }
+    }
+    // Text area styling
+    .text-message-container {
+      @include inputContainer;
+      margin: 1rem 0;
+
+      .text-area-input-field {
+        @include inputField;
+      }
+
+      .input-icon {
+        @include inputIcon;
+      }
+
+      .input-label {
+        @include inputLabel;
+      }
+
+      .input-highlight {
+        @include inputHighlight;
+      }
+
+      .text-area-input-field:focus + .input-label {
+        @include focusInputFieldAndInputLabel;
+      }
+
+      .text-area-input-field:focus + .input-label + .input-highlight {
+        width: 100%;
+      }
+    }
+
+    // Consent checkbox
+    .input-consent {
+      @include flexRow;
+
+      .checkbox {
+        @include checkbox;
+      }
+
+      .accept {
+        @include termOfUse;
+        color: $black;
+      }
+
+      .terms-of-user {
+        @include termOfUse;
+      }
+    }
+
+    // Button
+    .contact-form-btn {
+      @include button1;
+      border: 1px solid $green;
+    }
+  }
+}

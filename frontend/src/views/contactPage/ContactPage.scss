@@ -1,0 +1,17 @@
+@import '../../styles/Variables.scss';
+@import '../../styles/Mixins.scss';
+
+.contact-page {
+  .contact-page-container {
+    width: $laptop;
+    margin: 1rem auto;
+
+    .contact-page-title {
+      @include title;
+    }
+
+    .contact-box {
+      @include flexRow;
+    }
+  }
+}

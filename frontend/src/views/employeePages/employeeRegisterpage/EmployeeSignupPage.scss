@@ -1,0 +1,13 @@
+@import '../../../styles/Variables.scss';
+@import '../../../styles/Mixins.scss';
+
+.employee-signup-page {
+  .employee-signup-page-container {
+    width: $laptop;
+    margin: auto;
+
+    .employee-signup-page-title {
+      @include title;
+    }
+  }
+}

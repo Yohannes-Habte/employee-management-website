@@ -1,0 +1,95 @@
+@import '../../../styles/Variables.scss';
+@import '../../../styles/Mixins.scss';
+
+.employee-signup-container {
+  width: $laptop;
+  margin: 1rem auto;
+  @include shadow2;
+
+  .employee-signup-title {
+    @include subTitle;
+  }
+
+  .employee-signup-fieldset {
+    @include fieldset;
+
+    .employee-signup-legend {
+      @include legend;
+    }
+
+    .employee-signup-form {
+      @include flexColumn;
+
+      .inputs-container {
+        @include twoGridTemplateEqualColumns;
+
+        .input-container {
+          @include inputContainer;
+
+          .input-icon {
+            @include inputIcon;
+          }
+
+          .input-field {
+            @include inputField;
+          }
+
+          .input-label {
+            @include inputLabel;
+          }
+
+          .input-highlight {
+            @include inputHighlight;
+          }
+
+          .input-field:focus + .input-label {
+            @include focusInputFieldAndInputLabel;
+          }
+
+          .input-field:focus + .input-label + .input-highlight {
+            width: 100%;
+          }
+
+          .password-display {
+            @include passwordDisplay;
+          }
+        }
+      }
+
+      .consent-container {
+        @include flexRow;
+
+        .consent-checkbox {
+          @include checkbox;
+        }
+
+        .accept {
+          @include termOfUse;
+          color: $black;
+        }
+
+        .terms-of-use {
+          @include termOfUse;
+        }
+      }
+
+      .employee-account-btn {
+        @include button1;
+
+        .loading {
+          @include loader;
+        }
+      }
+
+      // Have an account
+      .have-account {
+        @include haveAccount;
+
+        .link-to-login {
+          @include linkTo;
+          padding-left: 0.5rem;
+        }
+      }
+    }
+  }
+}
