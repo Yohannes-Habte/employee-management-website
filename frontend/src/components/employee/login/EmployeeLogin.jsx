@@ -19,6 +19,7 @@ const EmployeeLogin = () => {
   // Local state variables
   const [employeeInfos, setEmployeeInfos] = useState(initialState);
   const [keepMe, setKeepMe] = useState(false);
+  const [error, setError] = useState(null);
 
   // Handle change
   const handleChange = (e) => {
@@ -49,20 +50,34 @@ const EmployeeLogin = () => {
         password: password,
         keepMe: keepMe,
       };
-      const { data } = await axios.post(`/employees/login`, employeeLogin);
-
+      const { data } = await axios.post(
+        `http://localhost:4000/api/auths/login`,
+        employeeLogin,
+        { withCredentials: true }
+      );
       rest();
       navigate('/employee/dashboard');
-    } catch (error) {}
+
+      // if (data.loginStatus) {
+      //   rest();
+      //   navigate('/employee/dashboard');
+      // } else {
+      //   setError(data.Error);
+      // }
+    } catch (error) {
+      console.log(error)
+    }
   };
 
   return (
     <section className="employee-login-container">
       <h2 className="employee-login-title">Welcome to Employee Account</h2>
 
+      {error && <p className="error-message"> {error} </p>}
+
       <fieldset className="employee-login-fieldset">
         <legend className="employee-login-legend">Employee Account</legend>
-        <form className="employee-login-form">
+        <form onSubmit={handleSubmit} className="employee-login-form">
           {/* Email address */}
           <div className="input-container">
             <span className="input-icon"> {emailIcon} </span>

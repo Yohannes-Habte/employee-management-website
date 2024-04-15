@@ -1,0 +1,14 @@
+@import '../../../styles/Variables.scss';
+@import '../../../styles/Mixins.scss';
+
+.employee-dashboard-container {
+  width: $laptop;
+  margin: 1rem auto;
+  padding-right: 1rem;
+
+  .employee-dashboard-summary {
+  }
+
+  .employee-dashboard-title {
+  }
+}

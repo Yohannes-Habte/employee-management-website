@@ -1,0 +1,67 @@
+@import '../../../styles/Variables.scss';
+@import '../../../styles/Mixins.scss';
+
+.add-employee-category-modal {
+  @include modal;
+
+  .add-employee-category-popup-box {
+    @include popupBox;
+    width: 50%;
+
+    .add-employee-category-title {
+      @include subTitle;
+    }
+
+    .add-employee-category-fieldset {
+      @include fieldset;
+
+      .add-employee-category-legend {
+        @include legend;
+      }
+
+      .add-employee-category-form {
+        @include flexColumn;
+
+        .input-container {
+          @include inputContainer;
+
+          .input-icon {
+            @include inputIcon;
+          }
+
+          .input-field {
+            @include inputField;
+          }
+
+          .input-label {
+            @include inputLabel;
+          }
+
+          .input-highlight {
+            @include inputHighlight;
+          }
+        }
+
+        .input-consent {
+          @include flexRow;
+
+          .consent-checkbox {
+            @include checkbox;
+          }
+
+          .accept {
+            @include linkTo;
+          }
+
+          .terms-of-user {
+            @include termOfUse;
+          }
+        }
+
+        .add-category-btn {
+          @include button3;
+        }
+      }
+    }
+  }
+}

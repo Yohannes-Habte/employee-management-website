@@ -6,6 +6,7 @@ import HomePage from './views/homePage/HomePage';
 import ContactPage from './views/contactPage/ContactPage';
 import EmployeeSignupPage from './views/employeePages/employeeRegisterpage/EmployeeSignupPage';
 import EmployeeLoginPage from './views/employeePages/employeeLoginPage/EmployeeLoginPage';
+import EmployeeDashboardPage from './views/employeePages/employeeDashboardPage/EmployeeDashboardPage';
 
 const App = () => {
   return (
@@ -16,6 +17,13 @@ const App = () => {
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/register" element={<EmployeeSignupPage />} />
           <Route path="/login" element={<EmployeeLoginPage />} />
+
+          {/* Employee Pages */}
+          <Route> </Route>
+          <Route
+            path="/employee/dashboard"
+            element={<EmployeeDashboardPage />}
+          />
         </Routes>
 
         {/* React toastify */}

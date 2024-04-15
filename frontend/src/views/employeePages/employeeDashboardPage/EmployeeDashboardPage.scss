@@ -1,0 +1,17 @@
+@import '../../../styles/Variables.scss';
+@import '../../../styles/Mixins.scss';
+
+.employee-dashboard-page {
+  .employee-dashboard-page-container {
+    
+    .employee-dashboard-page-title {
+      @include title;
+      @include shadow1;
+      background-color: $userSidebar-bg;
+    }
+
+    .employee-dashboard-box {
+      @include flexRow;
+    }
+  }
+}

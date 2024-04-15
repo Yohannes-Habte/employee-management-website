@@ -1,7 +1,5 @@
 @import './Variables.scss';
 
-@import './Variables.scss';
-
 // =====================================================================================
 // Title styling
 // =====================================================================================
@@ -221,6 +219,24 @@
 
   &:active {
     transform: scale(0.95);
+  }
+}
+
+@mixin button3 {
+  margin: 1rem 0;
+  padding: 0.5rem 1rem;
+  border: none;
+  background-color: $button-bg;
+  font-weight: $aafs;
+  font-size: $afs;
+  color: white;
+  border-radius: $radius;
+  cursor: pointer;
+  transition: 0.5s;
+
+  &:hover {
+    background-color: $button-hover;
+    color: $red;
   }
 }
 

@@ -1,0 +1,21 @@
+@import '../../../styles/Variables.scss';
+@import '../../../styles/Mixins.scss';
+
+
+.employees-container {
+
+    .employees-container-title {
+        @include title;
+    }
+
+    .add-employee-wrapper {
+        @include flexSpaceBetween;
+
+        .add-employee-title {}
+
+        .add-employee-btn {
+            @include button3;
+        }
+    }
+}
+

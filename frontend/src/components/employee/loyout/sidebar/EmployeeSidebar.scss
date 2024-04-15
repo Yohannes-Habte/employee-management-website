@@ -1,0 +1,83 @@
+@import '../../../../styles/Variables.scss';
+@import '../../../../styles/Mixins.scss';
+
+.employee-sidebar-container {
+  width: 17%;
+  @include shadow1;
+  border-radius: 0;
+  background-color: $userSidebar-bg;
+  height: 100vh;
+
+  .dashboard {
+    @include flexRow;
+    @include shadow1;
+    align-items: center;
+    color: $black;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+
+    &:hover {
+      color: $red;
+      background: $userSidebar-hover;
+      border-radius: $radius;
+    }
+
+    .passive-dashboard {
+      &:hover {
+        color: $red;
+        background: $userSidebar-hover;
+        border-radius: $radius;
+      }
+    }
+
+    .active-icon {
+      color: $red;
+    }
+
+    .active-dashboard {
+      color: $red;
+    }
+  }
+
+  .employee-sidebar-items {
+    @include flexColumn;
+
+    .passive-sidebar-item {
+      @include flexRow;
+      @include shadow1;
+      align-items: center;
+      font-size: $nfs;
+      padding: 0.5rem;
+      cursor: pointer;
+
+      &:hover {
+        color: $red;
+        background: $userSidebar-hover;
+        border-radius: $radius;
+      }
+    }
+
+    .active-sidebar-item {
+      color: $red;
+      @include flexRow;
+      @include shadow1;
+      align-items: center;
+      font-size: $nfs;
+      padding: 0.5rem;
+    }
+
+    .active-icon {
+      color: $red;
+      font-size: $afs;
+    }
+
+    .passive-icon {
+      color: $green;
+      font-size: $afs;
+
+      &:hover {
+        color: $red;
+      }
+    }
+  }
+}
