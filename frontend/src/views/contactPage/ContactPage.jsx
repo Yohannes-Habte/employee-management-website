@@ -6,6 +6,7 @@ import ContactTools from '../../components/contact/contactTools/ContactTools';
 const ContactPage = () => {
   return (
     <main className="contact-page">
+
       <article className="contact-page-container">
         <h1 className="contact-page-title"> contact Us </h1>
         <div className="contact-box">
@@ -13,6 +14,7 @@ const ContactPage = () => {
           <ContactForm />
         </div>
       </article>
+      
     </main>
   );
 };

@@ -8,6 +8,10 @@
     @include popupBox;
     width: 50%;
 
+    .close-popup {
+      @include closePopup;
+    }
+
     .add-employee-category-title {
       @include subTitle;
     }

@@ -8,6 +8,10 @@
     @include popupBox;
     width: 70%;
 
+    .close-popup {
+      @include closePopup;
+    }
+
     .add-employee-title {
       @include subTitle;
     }
@@ -68,8 +72,7 @@
       }
 
       .employee-account-btn {
-        @include button3;
-        width: fit-content;
+        @include button1;
 
         .loading {
           @include loader;

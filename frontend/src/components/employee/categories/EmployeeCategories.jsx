@@ -1,9 +1,31 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import AddEmployeeCategory from '../addCategory/AddEmployeeCategory';
+import axios from 'axios';
 
 const EmployeeCategories = () => {
+  // Local state variables
   const [openAddEmployeeCategory, setOpenAddEmployeeCategory] = useState(false);
+  const [categories, setCategories] = useState([]);
+
+  // Display employee categories
+  useEffect(() => {
+    const fetchCategoryData = async () => {
+      try {
+        const { data } = await axios.get(
+          `http://localhost:4000/api/categories`
+        );
+        if (data.success) {
+          setCategories(data.result);
+        } else {
+          alert(data.message);
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    fetchCategoryData();
+  }, [categories]);
 
   return (
     <section className="employees-container">
@@ -19,7 +41,11 @@ const EmployeeCategories = () => {
       </article>
       <hr />
 
-      {openAddEmployeeCategory && <AddEmployeeCategory />}
+      {openAddEmployeeCategory && (
+        <AddEmployeeCategory
+          setOpenAddEmployeeCategory={setOpenAddEmployeeCategory}
+        />
+      )}
     </section>
   );
 };

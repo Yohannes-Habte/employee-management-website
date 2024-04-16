@@ -4,6 +4,7 @@ import cookieParser from 'cookie-parser';
 
 // Routes
 import authRouter from './routes/authRoutes.js';
+import categoryRouter from './routes/categoryRoutes.js';
 import employeeRouter from './routes/employeeRoutes.js';
 
 // Express app
@@ -20,6 +21,7 @@ app.use(express.json());
 
 // End points
 app.use('/api/auths', authRouter);
+app.use('/api/categories', categoryRouter);
 app.use('/api/employees', employeeRouter);
 
 // Server Listner

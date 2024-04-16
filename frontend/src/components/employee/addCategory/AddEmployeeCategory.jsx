@@ -9,12 +9,12 @@ const initialState = {
   description: '',
   keywords: '',
 };
-const AddEmployeeCategory = () => {
+const AddEmployeeCategory = ({ setOpenAddEmployeeCategory }) => {
   // Navigate to employee dashboar
   const navigate = useNavigate();
 
   // Global react icons
-  const { categoryIcon, messageIcon } = ReactIcons();
+  const { categoryIcon, messageIcon, closeIcon } = ReactIcons();
 
   // Local state variables
   const [categoryInfos, setCategoryInfos] = useState(initialState);
@@ -46,30 +46,37 @@ const AddEmployeeCategory = () => {
 
     try {
       // New Employee
-      const employeeLogin = {
+      const addCategory = {
         categoryName: categoryName,
         description: description,
         keywords: keywords,
         agree: agree,
       };
       const { data } = await axios.post(
-        `http://localhost:4000/api/categories/new-category`,
-        employeeLogin,
-        { withCredentials: true }
+        `http://localhost:4000/api/categories/add-category`,
+        addCategory
       );
 
-      if (data.loginStatus) {
+      if (data.success) {
         rest();
         navigate('/employee/dashboard');
       } else {
-        setError(data.Error);
+        setError(data.message);
       }
-    } catch (error) {}
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
     <article className="add-employee-category-modal">
       <section className="add-employee-category-popup-box">
+        <span
+          onClick={() => setOpenAddEmployeeCategory(false)}
+          className="close-popup"
+        >
+          {closeIcon}
+        </span>
         <h2 className="add-employee-category-title"> Add New Category </h2>
         <fieldset className="add-employee-category-fieldset">
           <legend className="add-employee-category-legend">
@@ -134,6 +141,7 @@ const AddEmployeeCategory = () => {
                 name="agree"
                 id="agree"
                 checked={agree}
+                onChange={() => setAgree(!agree)}
                 className="consent-checkbox"
               />
               <label htmlFor="agree" className="accept">

@@ -19,7 +19,9 @@ const Employees = () => {
       </article>
       <hr />
 
-      {openAddEmployee && <AddEmployee />}
+      {openAddEmployee && (
+        <AddEmployee setOpenAddEmployee={setOpenAddEmployee} />
+      )}
     </section>
   );
 };
