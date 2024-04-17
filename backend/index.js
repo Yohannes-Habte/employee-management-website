@@ -24,6 +24,9 @@ app.use('/api/auths', authRouter);
 app.use('/api/categories', categoryRouter);
 app.use('/api/employees', employeeRouter);
 
+// http://localhost:3001/Meal1_HummusBowl.jpg
+app.use(express.static('public/images'));
+
 // Server Listner
 const port = process.env.PORT || 4000;
 app.listen(port, () => {

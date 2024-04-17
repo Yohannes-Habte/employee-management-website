@@ -1,21 +1,84 @@
 @import '../../../styles/Variables.scss';
 @import '../../../styles/Mixins.scss';
 
+/* Small devices such as large phones 640px and below) */
 
-.employees-container {
 
-    .employees-container-title {
-        @include title;
-    }
-
-    .add-employee-wrapper {
-        @include flexSpaceBetween;
-
-        .add-employee-title {}
-
-        .add-employee-btn {
-            @include button3;
-        }
-    }
+/* Medium devices such as tablets (768px and 1023px) */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
 }
 
+/* Large devices such as laptops (1024px and 1280px) */
+@media only screen and (min-width: 64em) and (max-width: 80em) {
+}
+
+/* Largest devices such as desktops (1280px and up) */
+@media only screen and (min-width: 80em) {
+}
+
+.employees-container {
+  .employees-container-title {
+    @include title;
+  }
+
+  .add-employee-wrapper {
+    @include flexSpaceBetween;
+
+    .add-employee-title {
+    }
+
+    .add-employee-btn {
+      @include button3;
+    }
+  }
+
+  .employee-list-container {
+    width: $tablet;
+    margin: 1rem auto;
+
+    .table-address {
+      width: 100%;
+      margin-top: 1rem;
+
+      .table-head {
+        background-color: $modal-bg;
+        .head-row {
+          .head-cell {
+            text-align: start;
+            font-size: $afs;
+            padding: 1rem;
+            border-bottom: 1px solid $blue;
+          }
+        }
+      }
+
+      .table-body {
+        .body-row {
+          .body-cell {
+            text-align: start;
+            font-size: $afs;
+            padding: 1rem;
+            border-bottom: 1px solid $gray;
+          }
+
+          .action-cell {
+            @include flexRow;
+            align-items: center;
+            padding: 1rem;
+            border-bottom: 1px solid $gray;
+
+            .update-employee-profile {
+              @include deleteIcon;
+              color: $green;
+            }
+
+            .delete-employee-btn {
+              @include deleteIcon;
+              border: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}

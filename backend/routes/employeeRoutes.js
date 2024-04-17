@@ -1,5 +1,9 @@
 import express from 'express';
-import { addEmployee } from '../controllers/employeeController.js';
+import {
+  addEmployee,
+  getAllEmployees,
+  updateEmployeeAccount,
+} from '../controllers/employeeController.js';
 import multer from 'multer';
 import path from 'path';
 
@@ -13,8 +17,7 @@ const storage = multer.diskStorage({
   filename: (req, file, cb) => {
     cb(
       null,
-      file.fieldname,
-      +'_' + Date.now() + path.extname(file.originalname)
+      file.fieldname + '_' + Date.now() + path.extname(file.originalname)
     );
   },
 });
@@ -25,5 +28,7 @@ const upload = multer({
 
 // Routes
 employeeRouter.post('/add-employee', upload.single('image'), addEmployee);
+employeeRouter.get('/', getAllEmployees);
+employeeRouter.get('/employee/profile/:id', updateEmployeeAccount);
 
 export default employeeRouter;

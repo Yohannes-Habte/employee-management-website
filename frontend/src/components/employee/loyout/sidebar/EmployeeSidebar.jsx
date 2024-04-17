@@ -9,7 +9,11 @@ const EmployeeSidebar = ({ setActive, active }) => {
   return (
     <aside className="employee-sidebar-container">
       <h3 className="dashboard" onClick={() => setActive(1)}>
-        <span className={active === 1 ? 'active-icon' : 'passive-icon'}>
+        <span
+          className={
+            active === 1 ? 'active-dashboard-icon' : 'passive-dashboard-icon'
+          }
+        >
           {dashboardIcon}
         </span>
         <Link
@@ -30,7 +34,7 @@ const EmployeeSidebar = ({ setActive, active }) => {
           <span className={active === 2 ? 'active-icon' : 'passive-icon'}>
             {usersIcon}
           </span>
-          Employees
+          <span className="sidebar-text"> Employees</span>
         </li>
 
         <li
@@ -42,7 +46,7 @@ const EmployeeSidebar = ({ setActive, active }) => {
           <span className={active === 3 ? 'active-icon' : 'passive-icon'}>
             {categoryIcon}
           </span>
-          Category
+          <span className="sidebar-text"> Category</span>
         </li>
 
         <li
@@ -54,7 +58,8 @@ const EmployeeSidebar = ({ setActive, active }) => {
           <span className={active === 4 ? 'active-icon' : 'passive-icon'}>
             {userIcon}
           </span>
-          Profile
+
+          <span className="sidebar-text"> Profile </span>
         </li>
 
         <li
@@ -65,13 +70,8 @@ const EmployeeSidebar = ({ setActive, active }) => {
           <span className={active === 5 ? 'active-icon' : 'passive-icon'}>
             {logoutIcon}
           </span>
-          <Link
-            to={'/login'}
-            className={
-              active === 5 ? 'active-sidebar-item' : 'passive-sidebar-item'
-            }
-          >
-            Logout
+          <Link to={'/login'}>
+            <span className="sidebar-text"> Logout </span>
           </Link>
         </li>
       </ul>

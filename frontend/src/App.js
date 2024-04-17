@@ -7,6 +7,8 @@ import ContactPage from './views/contactPage/ContactPage';
 import EmployeeSignupPage from './views/employeePages/employeeRegisterpage/EmployeeSignupPage';
 import EmployeeLoginPage from './views/employeePages/employeeLoginPage/EmployeeLoginPage';
 import EmployeeDashboardPage from './views/employeePages/employeeDashboardPage/EmployeeDashboardPage';
+import UpdateEmployeeProfilePage from './views/employeePages/updateProfilePage/UpdateEmployeeProfilePage';
+import UpdateEmployeeCategoryPage from './views/employeePages/updateCategoryPage/UpdateEmployeeCategoryPage';
 
 const App = () => {
   return (
@@ -19,10 +21,19 @@ const App = () => {
           <Route path="/login" element={<EmployeeLoginPage />} />
 
           {/* Employee Pages */}
-          <Route> </Route>
           <Route
             path="/employee/dashboard"
             element={<EmployeeDashboardPage />}
+          />
+
+          <Route
+            path="/employee/category/:id"
+            element={<UpdateEmployeeCategoryPage />}
+          />
+
+          <Route
+            path="/employee/profile/:id"
+            element={<UpdateEmployeeProfilePage />}
           />
         </Routes>
 

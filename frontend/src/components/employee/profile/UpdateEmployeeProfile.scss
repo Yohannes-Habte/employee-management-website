@@ -1,0 +1,237 @@
+@import '../../../styles/Variables.scss';
+@import '../../../styles/Mixins.scss';
+
+
+
+/* Small devices such as large phones 640px and below) */
+.update-employee-profile-container {
+  @include shadow2;
+
+  .update-employee-profile-title {
+    @include subTitle;
+  }
+
+  .update-employee-profile-form {
+    @include flexColumn;
+
+    .inputs-container {
+      @include flexColumn;
+
+      .input-container {
+        @include inputContainer;
+
+        .input-icon {
+          @include inputIcon;
+        }
+
+        .input-field {
+          @include inputField;
+        }
+
+        .input-label {
+          @include inputLabel;
+        }
+
+        .input-highlight {
+          @include inputHighlight;
+        }
+
+        .input-field:focus + .input-label {
+          @include focusInputFieldAndInputLabel;
+        }
+
+        .input-field:focus + .input-label + .input-highlight {
+          width: 100%;
+        }
+
+        .password-display {
+          @include passwordDisplay;
+        }
+      }
+    }
+
+    .consent-container {
+      @include flexRow;
+
+      .consent-checkbox {
+        @include checkbox;
+      }
+
+      .accept {
+        @include termOfUse;
+        color: $black;
+      }
+
+      .terms-of-use {
+        @include termOfUse;
+      }
+    }
+
+    .update-employee-account-btn {
+      @include button1;
+
+      .loading {
+        @include loader;
+      }
+    }
+  }
+}
+
+
+/* Medium devices such as tablets (768px and 1023px) */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+}
+
+/* Large devices such as laptops (1024px and 1280px) */
+@media only screen and (min-width: 64em) and (max-width: 80em) {
+  .update-employee-profile-container {
+    @include shadow2;
+  
+    .update-employee-profile-title {
+      @include subTitle;
+    }
+  
+    .update-employee-profile-form {
+      @include flexColumn;
+  
+      .inputs-container {
+        @include twoGridTemplateEqualColumns;
+  
+        .input-container {
+          @include inputContainer;
+  
+          .input-icon {
+            @include inputIcon;
+          }
+  
+          .input-field {
+            @include inputField;
+          }
+  
+          .input-label {
+            @include inputLabel;
+          }
+  
+          .input-highlight {
+            @include inputHighlight;
+          }
+  
+          .input-field:focus + .input-label {
+            @include focusInputFieldAndInputLabel;
+          }
+  
+          .input-field:focus + .input-label + .input-highlight {
+            width: 100%;
+          }
+  
+          .password-display {
+            @include passwordDisplay;
+          }
+        }
+      }
+  
+      .consent-container {
+        @include flexRow;
+  
+        .consent-checkbox {
+          @include checkbox;
+        }
+  
+        .accept {
+          @include termOfUse;
+          color: $black;
+        }
+  
+        .terms-of-use {
+          @include termOfUse;
+        }
+      }
+  
+      .update-employee-account-btn {
+        @include button1;
+  
+        .loading {
+          @include loader;
+        }
+      }
+    }
+  }
+}
+
+/* Largest devices such as desktops (1280px and up) */
+@media only screen and (min-width: 80em) {
+  .update-employee-profile-container {
+    @include shadow2;
+  
+    .update-employee-profile-title {
+      @include subTitle;
+    }
+  
+    .update-employee-profile-form {
+      @include flexColumn;
+  
+      .inputs-container {
+        @include twoGridTemplateEqualColumns;
+  
+        .input-container {
+          @include inputContainer;
+  
+          .input-icon {
+            @include inputIcon;
+          }
+  
+          .input-field {
+            @include inputField;
+          }
+  
+          .input-label {
+            @include inputLabel;
+          }
+  
+          .input-highlight {
+            @include inputHighlight;
+          }
+  
+          .input-field:focus + .input-label {
+            @include focusInputFieldAndInputLabel;
+          }
+  
+          .input-field:focus + .input-label + .input-highlight {
+            width: 100%;
+          }
+  
+          .password-display {
+            @include passwordDisplay;
+          }
+        }
+      }
+  
+      .consent-container {
+        @include flexRow;
+  
+        .consent-checkbox {
+          @include checkbox;
+        }
+  
+        .accept {
+          @include termOfUse;
+          color: $black;
+        }
+  
+        .terms-of-use {
+          @include termOfUse;
+        }
+      }
+  
+      .update-employee-account-btn {
+        @include button1;
+  
+        .loading {
+          @include loader;
+        }
+      }
+    }
+  }
+}
+
+

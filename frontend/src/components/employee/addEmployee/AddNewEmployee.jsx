@@ -41,8 +41,6 @@ const AddNewEmployee = ({ setOpenAddEmployee }) => {
   const [agree, setAgree] = useState(false);
   const [categories, setCategories] = useState([]);
 
-  console.log('Categories=', categories);
-
   // Display employee categories
   useEffect(() => {
     const fetchCategoryData = async () => {
@@ -152,11 +150,7 @@ const AddNewEmployee = ({ setOpenAddEmployee }) => {
         </span>
         <h2 className="add-employee-title"> Add New Employee</h2>
 
-        <form
-          onSubmit={handleSubmit}
-          enctype="multipart/form-data"
-          className="add-employee-form"
-        >
+        <form onSubmit={handleSubmit} className="add-employee-form">
           {/* inputs container */}
           <div className="inputs-container">
             {/* First Name */}
@@ -433,7 +427,7 @@ const AddNewEmployee = ({ setOpenAddEmployee }) => {
                   categories.map((category) => {
                     return (
                       <option value={category.category_id}>
-                        {category.cateory_name}
+                        {category.category_name}
                       </option>
                     );
                   })}

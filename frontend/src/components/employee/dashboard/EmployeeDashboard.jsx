@@ -1,7 +1,7 @@
 import React from 'react';
 import "./EmployeeDashboard.scss"
 import Employees from '../employees/Employees';
-import EmployeeProfile from '../profile/EmployeeProfile';
+import EmployeeProfile from '../profile/UpdateEmployeeProfile';
 import EmployeeCategories from '../categories/EmployeeCategories';
 
 const EmployeeDashboard = ({ active }) => {

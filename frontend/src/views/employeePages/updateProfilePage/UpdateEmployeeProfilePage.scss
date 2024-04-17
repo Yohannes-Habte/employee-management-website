@@ -1,3 +1,5 @@
+@import '../../../styles/Variables.scss';
+@import '../../../styles/Mixins.scss';
 
 /* Small devices such as large phones 640px and below) */
 
@@ -12,4 +14,16 @@
 
 /* Largest devices such as desktops (1280px and up) */
 @media only screen and (min-width: 80em) {
+}
+
+.update-employee-profile-page {
+
+    .update-employee-profile-page-container {
+        width: $laptop;
+        margin: 1rem auto;
+
+        .update-employee-profile-page-title {
+            @include title;
+        }
+    }
 }

@@ -1,19 +1,17 @@
 @import '../../../../styles/Variables.scss';
 @import '../../../../styles/Mixins.scss';
 
+/* Small devices such as large phones 640px and below) */
 .employee-sidebar-container {
-  width: 17%;
-  @include shadow1;
+  width: 10%;
   border-radius: 0;
   background-color: $userSidebar-bg;
-  height: 100vh;
+  min-height: 100vh;
 
   .dashboard {
-    @include flexRow;
-    @include shadow1;
+    @include flexCenter;
     align-items: center;
     color: $black;
-    padding: 0.5rem;
     margin-bottom: 1rem;
 
     &:hover {
@@ -21,21 +19,24 @@
       background: $userSidebar-hover;
       border-radius: $radius;
     }
-
-    .passive-dashboard {
-      &:hover {
-        color: $red;
-        background: $userSidebar-hover;
-        border-radius: $radius;
-      }
+    .active-dashboard-icon {
+      color: $red;
+      padding-right: -1rem;
+      cursor: pointer;
     }
 
-    .active-icon {
-      color: $red;
+    .passive-dashboard-icon {
+      color: $black;
+      padding-right: -1rem;
+      cursor: pointer;
+    }
+
+    .passive-dashboard {
+      display: none;
     }
 
     .active-dashboard {
-      color: $red;
+      display: none;
     }
   }
 
@@ -43,11 +44,10 @@
     @include flexColumn;
 
     .passive-sidebar-item {
-      @include flexRow;
       @include shadow1;
-      align-items: center;
+      @include flexCenter;
       font-size: $nfs;
-      padding: 0.5rem;
+      margin-right: 1rem;
       cursor: pointer;
 
       &:hover {
@@ -55,15 +55,23 @@
         background: $userSidebar-hover;
         border-radius: $radius;
       }
+
+      .sidebar-text {
+        display: none;
+      }
     }
 
     .active-sidebar-item {
       color: $red;
-      @include flexRow;
       @include shadow1;
+      @include flexCenter;
       align-items: center;
       font-size: $nfs;
-      padding: 0.5rem;
+      margin-right: 1rem;
+
+      .sidebar-text {
+        display: none;
+      }
     }
 
     .active-icon {
@@ -77,6 +85,288 @@
 
       &:hover {
         color: $red;
+      }
+    }
+  }
+}
+
+/* Medium devices such as tablets (768px and 1023px) */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .employee-sidebar-container {
+    width: 17%;
+    @include shadow1;
+    border-radius: 0;
+    background-color: $userSidebar-bg;
+    height: 100vh;
+
+    .dashboard {
+      @include flexRow;
+      @include shadow1;
+      align-items: center;
+      color: $black;
+      padding: 0.5rem;
+      margin-bottom: 1rem;
+
+      &:hover {
+        color: $red;
+        background: $userSidebar-hover;
+        border-radius: $radius;
+      }
+
+      .passive-dashboard {
+        display: block;
+        &:hover {
+          color: $red;
+          background: $userSidebar-hover;
+          border-radius: $radius;
+        }
+      }
+
+      .active-icon {
+        color: $red;
+      }
+
+      .active-dashboard {
+        display: block;
+        color: $red;
+      }
+    }
+
+    .employee-sidebar-items {
+      @include flexColumn;
+
+      .passive-sidebar-item {
+        @include flexRow;
+        @include shadow1;
+        align-items: center;
+        font-size: $nfs;
+        padding: 0.5rem;
+        cursor: pointer;
+
+        &:hover {
+          color: $red;
+          background: $userSidebar-hover;
+          border-radius: $radius;
+        }
+
+        .sidebar-text {
+          display: block;
+        }
+      }
+
+      .active-sidebar-item {
+        color: $red;
+        @include flexRow;
+        @include shadow1;
+        align-items: center;
+        font-size: $nfs;
+        padding: 0.5rem;
+
+        .sidebar-text {
+          display: block;
+        }
+      }
+
+      .active-icon {
+        color: $red;
+        font-size: $afs;
+      }
+
+      .passive-icon {
+        color: $green;
+        font-size: $afs;
+
+        &:hover {
+          color: $red;
+        }
+      }
+    }
+  }
+}
+
+/* Large devices such as laptops (1024px and 1280px) */
+@media only screen and (min-width: 64em) and (max-width: 80em) {
+  .employee-sidebar-container {
+    width: 17%;
+    @include shadow1;
+    border-radius: 0;
+    background-color: $userSidebar-bg;
+    height: 100vh;
+
+    .dashboard {
+      @include flexRow;
+      @include shadow1;
+      align-items: center;
+      color: $black;
+      padding: 0.5rem;
+      margin-bottom: 1rem;
+
+      &:hover {
+        color: $red;
+        background: $userSidebar-hover;
+        border-radius: $radius;
+      }
+
+      .passive-dashboard {
+        display: block;
+        &:hover {
+          color: $red;
+          background: $userSidebar-hover;
+          border-radius: $radius;
+        }
+      }
+
+      .active-icon {
+        color: $red;
+      }
+
+      .active-dashboard {
+        display: block;
+        color: $red;
+      }
+    }
+
+    .employee-sidebar-items {
+      @include flexColumn;
+
+      .passive-sidebar-item {
+        @include flexRow;
+        @include shadow1;
+        align-items: center;
+        font-size: $nfs;
+        padding: 0.5rem;
+        cursor: pointer;
+
+        &:hover {
+          color: $red;
+          background: $userSidebar-hover;
+          border-radius: $radius;
+        }
+
+        .sidebar-text {
+          display: block;
+        }
+      }
+
+      .active-sidebar-item {
+        color: $red;
+        @include flexRow;
+        @include shadow1;
+        align-items: center;
+        font-size: $nfs;
+        padding: 0.5rem;
+
+        .sidebar-text {
+          display: block;
+        }
+      }
+
+      .active-icon {
+        color: $red;
+        font-size: $afs;
+      }
+
+      .passive-icon {
+        color: $green;
+        font-size: $afs;
+
+        &:hover {
+          color: $red;
+        }
+      }
+    }
+  }
+}
+
+/* Largest devices such as desktops (1280px and up) */
+@media only screen and (min-width: 80em) {
+  .employee-sidebar-container {
+    width: 10%;
+    @include shadow1;
+    border-radius: 0;
+    background-color: $userSidebar-bg;
+    height: 100vh;
+
+    .dashboard {
+      @include flexRow;
+      @include shadow1;
+      align-items: center;
+      color: $black;
+      padding: 0.5rem;
+      margin-bottom: 1rem;
+
+      &:hover {
+        color: $red;
+        background: $userSidebar-hover;
+        border-radius: $radius;
+      }
+
+      .passive-dashboard {
+        display: block;
+        &:hover {
+          color: $red;
+          background: $userSidebar-hover;
+          border-radius: $radius;
+        }
+      }
+
+      .active-icon {
+        color: $red;
+      }
+
+      .active-dashboard {
+        display: block;
+        color: $red;
+      }
+    }
+
+    .employee-sidebar-items {
+      @include flexColumn;
+
+      .passive-sidebar-item {
+        @include flexRow;
+        @include shadow1;
+        align-items: center;
+        font-size: $nfs;
+        padding: 0.5rem;
+        cursor: pointer;
+
+        &:hover {
+          color: $red;
+          background: $userSidebar-hover;
+          border-radius: $radius;
+        }
+
+        .sidebar-text {
+          display: block;
+        }
+      }
+
+      .active-sidebar-item {
+        color: $red;
+        @include flexRow;
+        @include shadow1;
+        align-items: center;
+        font-size: $nfs;
+        padding: 0.5rem;
+
+        .sidebar-text {
+          display: block;
+        }
+      }
+
+      .active-icon {
+        color: $red;
+        font-size: $afs;
+      }
+
+      .passive-icon {
+        color: $green;
+        font-size: $afs;
+
+        &:hover {
+          color: $red;
+        }
       }
     }
   }

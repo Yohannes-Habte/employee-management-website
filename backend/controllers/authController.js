@@ -1,9 +1,9 @@
 import con from '../utils/db.js';
 import jwt from 'jsonwebtoken';
 
-// ==========================================
+// ===========================================================================================
 // Login Employee
-// ==========================================
+// ===========================================================================================
 export const loginEmployee = async (req, res, error) => {
   const sql = 'SELECT * from adminTable where email = ? and password = ?';
   con.query(sql, [req.body.email, req.body.password], (err, result) => {
