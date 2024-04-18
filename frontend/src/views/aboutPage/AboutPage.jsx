@@ -1,15 +1,15 @@
 import React from 'react';
 import Header from '../../components/user/layout/header/Header';
 
-const HomePage = () => {
+const AboutPage = () => {
   return (
     <main>
       <Header />
       <article>
-        <h1> New Products </h1>
+        <h1> About Page</h1>
       </article>
     </main>
   );
 };
 
-export default HomePage;
+export default AboutPage;

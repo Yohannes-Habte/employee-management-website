@@ -1,0 +1,31 @@
+@import '../../../../styles/Variables.scss';
+@import '../../../../styles/Mixins.scss';
+
+.header {
+  @include flexSpaceBetween;
+  background-color: $header-bg;
+  .logo-container {
+    .logo {
+      width: 8rem;
+      height: 8rem;
+      border-radius: 50%;
+    }
+  }
+
+  .user-account-wrapper {
+    @include flexRow;
+    padding-right: 2rem;
+    gap: 1rem;
+    .user-account {
+      .link {
+        color: $white;
+        font-size: $afs;
+        cursor: pointer;
+
+        &:hover {
+          color: $red;
+        }
+      }
+    }
+  }
+}

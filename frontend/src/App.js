@@ -9,6 +9,7 @@ import EmployeeLoginPage from './views/employeePages/employeeLoginPage/EmployeeL
 import EmployeeDashboardPage from './views/employeePages/employeeDashboardPage/EmployeeDashboardPage';
 import UpdateEmployeeProfilePage from './views/employeePages/updateProfilePage/UpdateEmployeeProfilePage';
 import UpdateEmployeeCategoryPage from './views/employeePages/updateCategoryPage/UpdateEmployeeCategoryPage';
+import AboutPage from './views/aboutPage/AboutPage';
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
       <Router>
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/register" element={<EmployeeSignupPage />} />
           <Route path="/login" element={<EmployeeLoginPage />} />

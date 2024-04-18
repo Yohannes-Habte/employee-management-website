@@ -373,6 +373,7 @@
 @mixin activeNavbar {
   position: relative;
   color: $red;
+  font-size: $afs;
 
   &::after {
     content: ' ';
@@ -386,7 +387,8 @@
 }
 
 @mixin passiveNavbar {
-  color: $black;
+  color: $white;
+  font-size: $afs;
 
   &:hover {
     color: $red;
