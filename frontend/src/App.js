@@ -10,6 +10,7 @@ import EmployeeDashboardPage from './views/employeePages/employeeDashboardPage/E
 import UpdateEmployeeProfilePage from './views/employeePages/updateProfilePage/UpdateEmployeeProfilePage';
 import UpdateEmployeeCategoryPage from './views/employeePages/updateCategoryPage/UpdateEmployeeCategoryPage';
 import AboutPage from './views/aboutPage/AboutPage';
+import ProductsPage from './views/productsPage/ProductsPage';
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutPage />} />
+          <Route path="/products" element={<ProductsPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/register" element={<EmployeeSignupPage />} />
           <Route path="/login" element={<EmployeeLoginPage />} />
